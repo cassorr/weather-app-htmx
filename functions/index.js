@@ -1,19 +1,23 @@
-/**
- * Import function triggers from their respective submodules:
- *
- * const {onCall} = require("firebase-functions/v2/https");
- * const {onDocumentWritten} = require("firebase-functions/v2/firestore");
- *
- * See a full list of supported triggers at https://firebase.google.com/docs/functions
- */
+const functions = require("firebase-functions");
+const express = require("express");
+const app = express();
 
-const {onRequest} = require("firebase-functions/v2/https");
-const logger = require("firebase-functions/logger");
+// Set up the view engine to use Pug
+app.set("view engine", "pug");
+app.set("views", `${__dirname}/views`);
 
-// Create and deploy your first functions
-// https://firebase.google.com/docs/functions/get-started
+// Define routes
+app.get("/home", (req, res) => {
+    res.render("home");
+});
 
-// exports.helloWorld = onRequest((request, response) => {
-//   logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+app.get("/about", (req, res) => {
+    res.render("about");
+});
+
+app.get("/contact", (req, res) => {
+    res.render("contact");
+});
+
+// Export the Express app as an HTTP function
+exports.app = functions.https.onRequest(app);

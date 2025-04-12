@@ -21,6 +21,13 @@
     ],
     "rewrites": [
       {
+        "source": "/app/**",
+        "function": {
+          "function": "app",
+          "codebase": "default"
+        }
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }

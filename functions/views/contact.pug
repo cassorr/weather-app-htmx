@@ -1,0 +1,30 @@
+.flex.flex-col.justify-start
+  .relative.flex.w-full.flex-row.justify-center.overflow-hidden.p-20
+    .relative.inline.w-full.max-w-inner.py-6.h-fit.mt-2(class='lg:py-16 md:py-14 sm:py-12 xs:py-10 !pb-0')
+      h1.font-montserrat.tracking-wider.text-black.mb-5.font-medium.text-4xl.shadow-glow(class='sm:text-5xl') Contact Us
+      .border-l.border-solid.border-black.pl-4(class='max-w-1/2')
+        p.font-light.text-gray-400.font-montserrat.text-base(class='tracking-[0.056rem]')
+          | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, labore iure! Voluptates repellendus rerum perspiciatis laboriosam natus fuga saepe voluptatum fugit provident reprehenderit aliquid facilis beatae, quisquam deserunt, voluptate ad.
+  .relative.flex.w-full.flex-row.justify-center.overflow-hidden.p-8
+    .relative.inline.w-full.max-w-inner.py-6.h-fit(class='lg:py-16 md:py-14 sm:py-12 xs:py-10 !py-0')
+      .flex.flex-col.grid-cols-footer-contact(class='lg:grid gap-[50px]')
+        div
+          form
+            .grid.gap-5(class='md:grid-cols-2')
+              .flex.flex-col.gap-3
+                label.font-semibold.text-gray-400.font-montserrat.text-base.hidden(for='contact-form-name' class='tracking-[0.056rem]') Name
+                input#contact-form-name.appearance-none.text-black.rounded-md(class='border-[1px] border-black/50 focus:border-black/80 p-[10px_15px] bg-black/0 focus:outline-none' name='name' type='text' autocomplete='name' placeholder='Name')
+              .flex.flex-col.gap-3
+                label.font-semibold.text-gray-400.font-montserrat.text-base.hidden(for='contact-form-company' class='tracking-[0.056rem]') Company
+                input#contact-form-company.appearance-none.text-black.rounded-md(class='border-[1px] border-black/50 focus:border-black/80 p-[10px_15px] bg-black/0 focus:outline-none' type='text' autocomplete='organization' name='company' placeholder='Company')
+              .flex.flex-col.gap-3
+                label.font-semibold.text-gray-400.font-montserrat.text-base.hidden(for='contact-form-name' class='tracking-[0.056rem]') Email
+                input#contact-form-name.appearance-none.text-black.rounded-md(class='border-[1px] border-black/50 focus:border-black/80 p-[10px_15px] bg-black/0 focus:outline-none' type='email' autocomplete='email' name='email' placeholder='Email')
+              .flex.flex-col.gap-3
+                label.font-semibold.text-gray-400.font-montserrat.text-base.hidden(for='contact-form-phone' class='tracking-[0.056rem]') Phone
+                input#contact-form-phone.appearance-none.text-black.rounded-md(class='border-[1px] border-black/50 focus:border-black/80 p-[10px_15px] bg-black/0 focus:outline-none' type='tel' autocomplete='tel' name='tel' placeholder='Phone')
+            .flex.flex-col.gap-3.my-5
+              label.font-semibold.text-gray-400.font-montserrat.text-base.hidden(for='contact-form-name' class='tracking-[0.056rem]') Message
+              textarea#contact-form-message.appearance-none.text-black.rounded-md(class='border-[1px] border-black/50 focus:border-black/80 p-[10px_15px] bg-black/0 focus:outline-none' placeholder='Message' name='message' rows='4')
+            .flex.flex-row.justify-end
+              button.relative.font-montserrat.uppercase.tracking-wider.text-black.mb-5.font-medium.px-4.py-2.transition-all(type='submit' class="hover:bg-[#c4c4c4] hover:text-black before:absolute before:content-[''] before:top-full before:left-4 before:w-1/2 before:bg-black before:h-[2px] hover:before:w-full hover:before:-translate-x-4 before:transition-all") Send
