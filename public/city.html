@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>City Weather</title>
+    <script src="https://unpkg.com/htmx.org@1.9.5"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -36,22 +36,11 @@
     </style>
 </head>
 <body>
-    <a href="/index.html" class="back-link">&larr; Back</a>
+<a href="/index.html" class="back-link">&larr; Back</a>
 
-    <div class="card">
-        <h2>Missoula</h2>
-        <p>United States of America</p>
-    </div>
-
-    <div class="card">
-        <p><strong>Condition:</strong> Sunny</p>
-        <p><strong>Temperature:</strong> 18°C</p>
-        <p><strong>Feels Like:</strong> 18°C</p>
-        <p><strong>Humidity:</strong> 33%</p>
-        <p><strong>Wind Speed:</strong> 4 km/h</p>
-        <p><strong>UV Index:</strong> 0</p>
-        <p><strong>Visibility:</strong> 16 km</p>
-        <p><strong>Pressure:</strong> 1017 mb</p>
-    </div>
+<!-- Dynamically load city by name (e.g., city.html?name=Missoula) -->
+<div id="city-detail" hx-get="/getCityByName" hx-params="*" hx-trigger="load" hx-swap="innerHTML">
+    <p>Loading city weather...</p>
+</div>
 </body>
 </html>

@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Search City</title>
+    <script src="https://unpkg.com/htmx.org@1.9.5"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -49,14 +49,21 @@
             text-decoration: none;
             font-weight: bold;
         }
+        #response {
+            margin-top: 1rem;
+            color: lightgreen;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="/index.html" class="back-link">&larr; Back</a>
-        <h1>Add a City</h1>
-        <input type="text" placeholder="Enter city name..." id="cityInput" />
-        <button onclick="alert('Will fetch and save city')">Add City</button>
-    </div>
+<div class="container">
+    <a href="/index.html" class="back-link">&larr; Back</a>
+    <h1>Add a City</h1>
+    <form hx-get="/addCityWeather" hx-target="#response" hx-swap="innerHTML">
+        <input type="text" name="city" placeholder="Enter city name..." required />
+        <button type="submit">Add City</button>
+    </form>
+    <div id="response"></div>
+</div>
 </body>
 </html>
